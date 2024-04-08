@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Design with Name Overlay</title>
+  <title>Eid Mubarrak</title>
   <style>
     #canvas {
       border: 1px solid #000;
@@ -45,7 +45,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <canvas id="canvas" width="1080" height="1920"></canvas>
+  <canvas id="canvas" width="1500" height="1920"></canvas>
   <br>
   <input type="text" id="nameInput" placeholder="أكتب اسمك هنا">
   <button id="submitButton">Submit</button>
@@ -61,7 +61,7 @@
 
     // Replace 'EidE.png' with the path to your design image
     var designImage = new Image();
-    designImage.src = 'ASCO.png';
+    designImage.src = 'ASCO.jpg';
 
     designImage.onload = function() {
       var canvasAspectRatio = designCanvas.width / designCanvas.height;
@@ -90,7 +90,8 @@
     submitButton.addEventListener('click', function() {
       var name = document.getElementById('nameInput').value;
 
-      document.fonts.ready.then(function() {
+      // Wait for the font to be loaded completely
+      document.fonts.load('72px "Tajawal"').then(function() {
         textCanvas.width = designCanvas.width;
         textCanvas.height = designCanvas.height;
 
